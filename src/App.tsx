@@ -26,9 +26,9 @@ function App() {
     }
 ])
 
-  const [selectedTaskId, setSelectedTaskId] = useState(null);
+  const [selectedTaskId, setSelectedTaskId] = useState<number|null>(null);
 
-const getBackground = (priority) => {
+const getBackground = (priority: number) => {
   switch (priority) {
     case 0:
       return '#ffffff'
@@ -45,7 +45,7 @@ const getBackground = (priority) => {
   }
 }
 
-const toggleTask = (id) => {
+const toggleTask = (id: number) => {
   setTasks(tasks.map(task => 
     task.id === id 
     ? {...task, isDone: !task.isDone,}
